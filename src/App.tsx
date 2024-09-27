@@ -11,6 +11,8 @@ import ReceiptPage from "./pages/ReceiptPage";
 import AdminMainPage from "./pages/admin/AdminMainPage";
 import AdminReceiptPage from "./pages/admin/AdminReceiptPage";
 import AdminEconomicRequestPage from "./pages/admin/AdminEconomicRequestPage";
+import Footer from "./components/universal/Footer";
+import FaqPage from "./pages/FaqPage";
 
 
 
@@ -34,10 +36,12 @@ function App() {
             <Route path="/" element={<Home />} /> :
             <Route path="/authentication/callback" element={<Authcallback />} />
             <Route path="/kvittering" element={<ReceiptPage />} />
+            <Route path="/faq" element={<FaqPage />} />
           </Routes>
           :
           <Routes>
             <Route path="/*" element={<LoginPage />} />
+            <Route path="/faq" element={<FaqPage />} />
             <Route path="/authentication/callback" element={<Authcallback />} />
           </Routes>
         }
@@ -49,6 +53,7 @@ function App() {
         </Routes>
         }
       </div>
+      <Footer />
       </QueryClientProvider>
     </Router>
   );
