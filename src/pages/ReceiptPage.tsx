@@ -33,9 +33,9 @@ interface FormData {
 }
 
 interface PaymentInformation {
-    usedOnlinecard: boolean;
+    usedOnlineCard: boolean;
     accountnumber?: string;
-    carddetails?: string;
+    cardnumber?: string;
 }
 interface ReceiptRequestBody {
     receipt: Receipt;
@@ -78,9 +78,9 @@ const ReceiptPage = () => {
         console.log(attachments)
         setDisableSubmit(true);
         const paymentInfo: PaymentInformation = {
-            usedOnlinecard: usedOnlineCard,
+            usedOnlineCard: usedOnlineCard,
             accountnumber: (usedOnlineCard) ? "" : formdata.account_number,
-            carddetails: (usedOnlineCard) ? formdata.card_number : ""
+            cardnumber: (usedOnlineCard) ? formdata.card_number : ""
         }
         const receipt: Receipt = {
             amount: formdata.amount,
@@ -183,6 +183,7 @@ const ReceiptPage = () => {
                                     setFormdata({ ...formdata, committee_id: parseInt(e.target.value) });
                                 }
                             } >
+                                <option value="None">Ingen</option>
                                 {
                                     data && data.length ? data.map((committee: any) => {
                                         return <option key={committee.id} value={committee.id}>{committee.name}</option>
@@ -224,11 +225,13 @@ const ReceiptPage = () => {
                         </div>
                         <div className="flex-col w-[20rem]">
                             <p className="text-left tracking-wide">Ansvarlig enhet</p>
+                       
                             <select className="text-black p-3 rounded w-full" onChange={
                                 (e) => {
                                     setFormdata({ ...formdata, committee_id: parseInt(e.target.value) });
                                 }
                             } >
+                                     <option value="None">Ingen</option>
                                 {
                                     data && data.length ? data.map((committee: any) => {
                                         return <option key={committee.id} value={committee.id}>{committee.name}</option>

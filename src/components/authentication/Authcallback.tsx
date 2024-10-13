@@ -37,8 +37,7 @@ const Authcallback = () => {
                 }
                 /* ----- */
 
-                localStorage.setItem("onlineauth0login", JSON.stringify(data));
-                localStorage.setItem("onlineauth0user", JSON.stringify(user));
+                localStorage.setItem("autobankauth0login", JSON.stringify(data));
                 window.location.href = "/";
 
             }
