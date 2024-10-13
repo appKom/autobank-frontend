@@ -60,8 +60,8 @@ const NavDropdown = (props: NavdropdownProps) => {
           <hr className="border-b-2 w-full "></hr>
 
           {routes.map((route) => (
-            <div className="text-white text-[20px] p-3 rounded-[10px] hover:bg-green-800 cursor-pointer">
-              {route.name}
+            <div className="text-white text-[20px] p-3 rounded-[10px] hover:bg-green-900 cursor-pointer">
+              <a href={route.name}>{route.name}</a>
             </div>
           ))}
         </div>

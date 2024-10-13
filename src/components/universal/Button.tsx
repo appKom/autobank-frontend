@@ -19,14 +19,14 @@ const Button = (props: Props) => {
     sizeClasses = "px-6 py-3";
   }
 
-  const className = `flex rounded-[15px] items-center justify-center relativ p-2  h-[40px] bg-white justify-self-end relative z-20 font-medium text-center justify-center transition-all rounded-lg shadow-sm focus:ring focus:ring-primary-200 inline-flex items-center gap-1.5 ${colorClasses} ${sizeClasses}`;
+  const className = `flex rounded-[15px] items-center justify-center relativ p-2  h-[40px] bg-white justify-self-end relative z-5 font-medium text-center justify-center transition-all rounded-lg shadow-sm focus:ring focus:ring-primary-200 inline-flex items-center gap-1.5 ${colorClasses} ${sizeClasses}`;
 
   if (props.href) {
     return (
-        <a href={props.href} className={className}>
-          {props.title}
-          {props.icon}
-        </a>
+      <a href={props.href} className={className}>
+        {props.title}
+        {props.icon}
+      </a>
     );
   }
 
